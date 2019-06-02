@@ -1,0 +1,31 @@
+{
+  "name": "convocatoria",
+  "version": "1.0.0",
+  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antgarfer12/convocatoria1.git"
+  },
+  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "dependencies": {
+    "async": "~0.2.8",
+    "body-parser": "^1.19.0",
+    "express": "^3.2.6",
+    "mongodb": "^3.2.6",
+    "socket.io": "~0.9.14"
+  },
+  
+  "scripts": {
+    "start": "node index.js"
+  },
+  
+  "devDependencies": {},
+  "license": "ISC",
+  
+  "bugs": {
+    "url": "https://github.com/antgarfer12/convocatoria1/issues"
+  },
+  
+  "homepage": "https://github.com/antgarfer12/convocatoria1#readme"
+}
