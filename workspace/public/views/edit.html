@@ -1,0 +1,48 @@
+<br><br>
+<h1>Editar Circuito
+</h1>
+<br>
+
+<br>
+<div class="alert alert-warning alert-dismissable">
+
+    <center><strong>¡Atención!</strong> {{data}} </center>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Circuito</th>
+            <th>Año</th>
+            <th>Primero</th>
+            <th>Segundo</th>
+            <th>Tercero</th>
+            <th>Caídas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{updatedMotogp.circuit}}</td>
+            <td>{{updatedDeceased.year}}</td>
+            <td>
+                <input type="String" class="form-control" ng-model=updatedMotogp.first value="Primero" />
+            </td>
+            <td>
+                <input type="String" class="form-control" ng-model=updatedMotogp.second value="Segundo" />
+            </td>
+            <td>
+                <input type="String" class="form-control" ng-model=updatedMotogp.third value="Tercero" />
+            </td>
+            <td>
+                <input type="number" class="form-control" ng-model=updatedMotogp.crash value="Número" />
+            </td>
+            <td>
+
+                <button class="btn btn-primary" ng-click="updateMotogp()">Editar</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<hr/>
+<hr/>

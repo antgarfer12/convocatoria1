@@ -1,0 +1,15 @@
+{
+  "name": "fusioncharts",
+  "homepage": "https://github.com/fusioncharts/fusioncharts-dist",
+  "version": "3.13.5",
+  "_release": "3.13.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.13.5",
+    "commit": "4ccfeca57ab936a81376e7aa9046f65997dcf96a"
+  },
+  "_source": "https://github.com/fusioncharts/fusioncharts-dist.git",
+  "_target": "^3.13.5",
+  "_originalSource": "fusioncharts",
+  "_direct": true
+}
