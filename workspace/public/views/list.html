@@ -26,13 +26,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="circuit in motogp">
-            <td><a href="#!/ui/v1/motogp/edit/{{motogp.circuit}}/{{motogp.year}}">{{ motogp.circuit }}</a></td>
-            <td>{{ motogp.year }}</td>
-            <td>{{ motogp.first}}</td>
-            <td>{{ moto.second }}</td>
-            <td>{{ motogp.third }}</td>
-            <td>{{ motogp.crash }}</td>
+        <tr ng-repeat="race in motogp">
+            <td><a href="#!/ui/v1/motogp/edit/{{race.circuit}}/{{race.year}}">{{ race.circuit }}</a></td>
+            <td>{{ race.year }}</td>
+            <td>{{ race.first}}</td>
+            <td>{{ race.second }}</td>
+            <td>{{ race.third }}</td>
+            <td>{{ race.crash }}</td>
             <td>
                 <button class="btn btn-danger" id ="delete" ng-click="deleteMotogp(motogp.circuit, motogp.year)">Eliminar</button>
             </td>

@@ -8,10 +8,10 @@ var path = require("path");
 
 var app = express();
 
-app.use("/", express.static(__dirname + "workspace/public"));
+app.use("/", express.static(__dirname + "/public"));
 
 
-app.use("/app-agf", express.static(path.join(__dirname, "workspace/public/info.html")));
+app.use("/ui/v1/motogp", express.static(path.join(__dirname, "/public/views")));
 
 
 app.use(bodyParser.json());
@@ -24,11 +24,11 @@ const uri = "mongodb+srv://test:test@sos-sb5wi.mongodb.net/sos1819?retryWrites=t
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
 
-var conMotogp;
+var motogp;
 
 client.connect(err => {
-    conMotogp = client.db("sos1819").collection("motogp-data");
-    motoGpApi.register(app, conMotogp);
+    motogp = client.db("sos1819").collection("motogp-data");
+    motoGpApi.register(app, motogp);
     console.log("Connected!");
 });
 

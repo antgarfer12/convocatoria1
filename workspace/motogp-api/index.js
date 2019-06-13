@@ -13,7 +13,7 @@ apiRest.register = (app, motogp) => {
     });
 
 
-    //GET /deceaseds/
+    //GET /motogp/
     app.get(BASE_PATH, (req, res) => {
 
         //Busqueda 
@@ -38,17 +38,17 @@ apiRest.register = (app, motogp) => {
 
         if (req.query.first) {
 
-            queries.first = Number(req.query.first);
+            queries.first = req.query.first;
         }
 
         if (req.query.second) {
 
-            queries.second = Number(req.query.second);
+            queries.second = req.query.second;
         }
 
         if (req.query.third) {
 
-            queries.third = Number(req.query.third);
+            queries.third = req.query.third;
         }
         if (req.query.crash) {
 
@@ -245,7 +245,7 @@ apiRest.register = (app, motogp) => {
     });
 
 
-    //POST /deceaseds/
+    //POST /motogp/
 
     app.post(BASE_PATH, (req, res) => {
 
@@ -263,9 +263,9 @@ apiRest.register = (app, motogp) => {
 
             }
             else if (req.body.hasOwnProperty("circuit") == false || req.body.hasOwnProperty("year") == false || req.body.hasOwnProperty("first") == false ||
-                req.body.hasOwnProperty("second") == false || req.body.hasOwnProperty("third") == false || req.body.hasOwnProperty("crash") == false || req.body.province != circuit) {
+                req.body.hasOwnProperty("second") == false || req.body.hasOwnProperty("third") == false || req.body.hasOwnProperty("crash") == false || req.body.circuit != circuit) {
 
-                res.sendStatus(400);
+                 res.sendStatus(400);
 
             }
             else {
@@ -282,7 +282,7 @@ apiRest.register = (app, motogp) => {
     //POST /circuit/Jerez
     app.post(BASE_PATH + "/:circuit", (req, res) => {
 
-        res.send(405, 'Method Not Allowed');
+        res.sendStatus(405);
     });
 
 
@@ -352,7 +352,7 @@ apiRest.register = (app, motogp) => {
                 res.sendStatus(400);
             }
             else {
-                deceaseds.updateOne({ "circuit": circuit, "year": year }, { $set: updatedMotogp });
+                motogp.updateOne({ "circuit": circuit, "year": year }, { $set: updatedMotogp });
                 res.sendStatus(200);
             }
         });
@@ -388,7 +388,7 @@ apiRest.register = (app, motogp) => {
     });
 
 
-    //DELETE /deceaseds/Seville/2016
+    //DELETE /motogp/Seville/2016
     app.delete(BASE_PATH + "/:circuit/:year", (req, res) => {
         var year = Number(req.params.year);
         var circuit = req.params.circuit;
@@ -407,7 +407,7 @@ apiRest.register = (app, motogp) => {
     });
 
 
-    //DELETE /deceaseds/
+    //DELETE /motogp/
 
     app.delete(BASE_PATH, (req, res) => {
         motogp.remove({});
