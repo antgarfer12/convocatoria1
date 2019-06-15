@@ -16,7 +16,7 @@ angular
             controller: "ListCtrl",
             templateUrl: "views/list.html"
         }).
-        when("/ui/v1/motogp/edit/:province/:year", {
+        when("/ui/v1/motogp/edit/:circuit/:year", {
             controller: "EditCtrl",
             templateUrl: "views/edit.html"
         }).

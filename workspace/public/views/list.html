@@ -2,7 +2,7 @@
 <h1>Datos MotoGP
 
     <button class="btn btn-primary" ng-click="loadInitialData()">Cargar datos iniciales</button>
-    <button class="btn btn-warning" ng-click="deleteMotogp()">Eliminar todos</button>
+    <button class="btn btn-warning" ng-click="deleteMotogps()">Eliminar todos</button>
 </h1>
 <br>
 
@@ -34,7 +34,7 @@
             <td>{{ race.third }}</td>
             <td>{{ race.crash }}</td>
             <td>
-                <button class="btn btn-danger" id ="delete" ng-click="deleteMotogp(motogp.circuit, motogp.year)">Eliminar</button>
+                <button class="btn btn-danger" id ="delete" ng-click="deleteMotogp(race.circuit, race.year)">Eliminar</button>
             </td>
         </tr>
         <tr>

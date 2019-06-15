@@ -8,15 +8,16 @@ app.controller("EditCtrl", ["$scope", "$http", "$routeParams", "$location", func
     var API = "/api/v1/motogp";
     //var API = "https://sos1819-14.herokuapp.com/api/v1/motogp";
     var circuit = $routeParams.circuit;
+    console.log(circuit);
     var year = $routeParams.year;
-
+    console.log(year);
 
 
     $scope.data = "Disfrute de nuestra página";
 
     $http.get(API + "/" + circuit + "/" + year).then(function(response) {
         console.log("Data Recieved: " + JSON.stringify(response.data, null, 2));
-        $scope.updatedDeceased = response.data;
+        $scope.updatedMotogp = response.data;
 
     });
 
@@ -30,10 +31,10 @@ app.controller("EditCtrl", ["$scope", "$http", "$routeParams", "$location", func
             $location.path("/ui/v1/motogp");
 
         }, function() {
-            if ($scope.updatedDeceased.first == null ||
-                $scope.updatedDeceased.second == null ||
-                $scope.updatedDeceased.third == null ||
-                $scope.updatedDeceased.crash == null) {
+            if ($scope.updatedMotogp.first == null ||
+                $scope.updatedMotogp.second == null ||
+                $scope.updatedMotogp.third == null ||
+                $scope.updatedMotogp.crash == null) {
                 $scope.status = "Error: debe completar todos los campos"
             }
         });

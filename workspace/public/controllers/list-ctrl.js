@@ -58,7 +58,7 @@ app.controller("ListCtrl", ["$scope", "$http", function($scope, $http) {
         });
     };
 
-    $scope.deleteMotogp = function() {
+    $scope.deleteMotogps = function() {
         console.log("Deleting all circuits");
         $http.delete($scope.url).then(function(response) {
             alert("Todos los circuitos se han eliminado correctamente.");

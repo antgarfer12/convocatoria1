@@ -82,7 +82,7 @@ apiRest.register = (app, motogp) => {
         } //Paginación
         else if (Number.isInteger(limit) && Number.isInteger(offset)) {
 
-            injuredHospitalized.find({}).skip(offset).limit(limit).toArray((err, motogpArray) => {
+            motogp.find({}).skip(offset).limit(limit).toArray((err, motogpArray) => {
 
                 if (err) {
 
@@ -343,12 +343,12 @@ apiRest.register = (app, motogp) => {
         motogp.find({ "circuit": circuit, "year": year }).toArray((err, motogpArray) => {
             if (err)
                 console.log(err);
-            if (motogpArray == 0) {
+            /*if (motogpArray == 0) {
                 res.sendStatus(404);
-            }
+            }*/
             else if (req.body.hasOwnProperty("circuit") == false || req.body.hasOwnProperty("first") == false || req.body.hasOwnProperty("second") == false ||
                 req.body.hasOwnProperty("year") == false || req.body.hasOwnProperty("third") == false || req.body.hasOwnProperty("crash") == false ||
-                req.body.province != province || req.body.year != year) {
+                req.body.circuit != circuit || req.body.year != year) {
                 res.sendStatus(400);
             }
             else {
