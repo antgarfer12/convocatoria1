@@ -11,12 +11,21 @@
   "dependencies": {
     "async": "~0.2.8",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongodb": "^3.2.2",
+    "newman": "^4.5.0",
+    "phantomjs": "^2.1.7",
+    "request": "^2.88.0",
     "socket.io": "~0.9.14"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "pretest": "tests/runPhantom.sh",
+    "test": "newman run https://www.getpostman.com/collections/30856f1be9d684b11826 && protractor tests/tests.js",
+    "posttest": "killall phantomjs",
+    "test-motogp": "newman run https://www.getpostman.com/collections/30856f1be9d684b11826",
+    "test-protractor-motogp": "protractor test/tests.js"
   },
   "devDependencies": {},
   "license": "ISC",

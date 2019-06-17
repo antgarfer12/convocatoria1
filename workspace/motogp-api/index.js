@@ -185,7 +185,7 @@ apiRest.register = (app, motogp) => {
 
         var newMotogp = [{
                 circuit: "Jerez",
-                year: "2010",
+                year: 2010,
                 first: "Valentino Rossi",
                 second: "Tito Rabat",
                 third: "Jorge Lorenzo",
@@ -195,7 +195,7 @@ apiRest.register = (app, motogp) => {
 
             {
                 circuit: "Cheste",
-                year: "2010",
+                year: 2010,
                 first: "Jorge Lorenzo",
                 second: "Valentino Rossi",
                 third: "",
@@ -204,7 +204,7 @@ apiRest.register = (app, motogp) => {
 
             {
                 circuit: "Mugello",
-                year: "2010",
+                year: 2010,
                 first: "Jorge Lorenzo",
                 second: "Tito Rabat",
                 third: "Valentino Rossi",
@@ -213,7 +213,7 @@ apiRest.register = (app, motogp) => {
 
             {
                 circuit: "Badajoz",
-                year: "2010",
+                year: 2010,
                 first: "Jorge Lorenzo",
                 second: "Dani Pedrosa",
                 third: "",
@@ -222,7 +222,7 @@ apiRest.register = (app, motogp) => {
 
             {
                 circuit: "Badajoz",
-                year: "2010",
+                year: 2010,
                 first: "414",
                 second: "507",
                 third: "",

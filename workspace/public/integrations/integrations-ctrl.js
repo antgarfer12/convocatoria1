@@ -4,7 +4,7 @@ var app = angular.module("app");
 app.controller("IntegrationsCtrl", ["$scope", "$http", function($scope, $http) {
     console.log("IntegrationsCtrl initicialized!");
 
-    var myApi = "https://sos1819-14.herokuapp.com/api/v1/deceaseds";
+    var myApi = "https://sos1819-jun-antgarfer12.herokuapp.com/api/v1/motogp";
     var api1 = "/proxy1";
     var api2 = "/proxy2";
     var api3 = "/proxy3";
@@ -110,7 +110,7 @@ app.controller("IntegrationsCtrl", ["$scope", "$http", function($scope, $http) {
 
         function drawRegionsMap() {
             var data = google.visualization.arrayToDataTable([
-                ['Country', 'Deceaseds'],
+                ['Country', 'motogp'],
                 [dato[0], dato1[0]],
                 [dato[1], dato1[1]],
                 [dato[2], dato1[2]],

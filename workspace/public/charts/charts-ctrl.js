@@ -3,7 +3,7 @@ angular
     .controller("ChartsCtrl", ["$scope", "$http", "$routeParams", "$location", "$rootScope", function($scope, $http, $routeParams, $location, $rootScope) {
 
         console.log("ChartsCtrl loaded.");
-        var API = "/api/v1/deceaseds";
+        var API = "/api/v1/motogp";
         var dato = [];
 
         refresh();
@@ -16,9 +16,10 @@ angular
                     }
                     console.log(response.data);
 
-                    var anyo1Count = response.data.filter(deceased => deceased.year === 2019).length;
-                    var anyo2Count = response.data.filter(deceased => deceased.year === 2018).length;
-                    var anyo3Count = response.data.filter(deceased => deceased.year === 2017).length;
+                    var anyo1Count = response.data.filter(motogp => motogp.year === 2019).length;
+                    var anyo2Count = response.data.filter(motogp => motogp.year === 2015).length;
+                    var anyo3Count = response.data.filter(motogp => motogp.year === 2010).length;
+                    
 
 
 
@@ -33,7 +34,7 @@ angular
                             }
                         },
                         title: {
-                            text: 'Accidentes en los últimos 3 años'
+                            text: 'Total de carreras en 2010, 2015 y 2019'
                         },
                         plotOptions: {
                             series: {
@@ -54,8 +55,8 @@ angular
                             name: 'Unique users',
                             data: [
                                 ['2019', anyo1Count],
-                                ['2018', anyo2Count],
-                                ['2017', anyo3Count]
+                                ['2015', anyo2Count],
+                                ['2010', anyo3Count]
                             ]
                         }]
                     });
@@ -65,7 +66,7 @@ angular
                     $http.get(API).then(function(response) {
                         var i;
                         for (i = 0; i < response.data.length; i++) {
-                            dato.push(response.data[i].number);
+                            dato.push(response.data[i].crash);
                         }
                         google.charts.load('current', {
                             'packages': ['geochart'],
@@ -77,8 +78,11 @@ angular
 
                         function drawRegionsMap() {
                             var data = google.visualization.arrayToDataTable([
-                                ['Country', 'Deceaseds'],
-                                ['Spain', dato[0] + dato[1] + dato[2] + dato[3] + dato[4]]
+                                ['Country', 'motogp'],
+                                ['Spain', dato[4]],
+                                ['France', dato[4]],
+                                ['Ireland', dato[4]],
+                                ['Italy', dato[4]]
                             ]);
 
                             var options = {};
@@ -96,7 +100,7 @@ angular
                     $http.get(API).then(function(response) {
                         var i;
                         for (i = 0; i < response.data.length; i++) {
-                            datos.push({ x: response.data[i].number, y: response.data[i].life, z: response.data[i].year, name: response.data[i].province });
+                            datos.push({ x: response.data[i].crash, y: response.data[i].first, z: response.data[i].year, name: response.data[i].circuit });
                         }
 
                         console.log(datos);
